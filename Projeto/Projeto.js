@@ -16,26 +16,26 @@ class Animal{
 }
 
 class Gato extends Animal {
-    constructor(nome,raca,qtdPatas,cor,peso,tamanho){
-        super(nome,raca,qtdPatas,cor,peso,tamanho)
+    constructor(nome,raca,qtdPatas,cor,peso,tamanho,dono){
+        super(nome,raca,qtdPatas,cor,peso,tamanho,dono)
     }
     falar(){
-        console.log("MIAU");
+        console.log("\n MIAU \n");
     }
 }
 
 class Cachorro extends Animal {
-    constructor(nome,raca,qtdPatas,cor,peso,tamanho){
-        super(nome,raca,qtdPatas,cor,peso,tamanho)
+    constructor(nome,raca,qtdPatas,cor,peso,tamanho,dono){
+        super(nome,raca,qtdPatas,cor,peso,tamanho,dono)
     }
     falar(){
-        console.log("AUAUAU");
+        console.log("\n AUAUAU \n");
     }
 }
 
 class Galinha extends Animal{
-    constructor(nome,raca,qtdPatas,cor,peso,tamanho){
-        super(nome,raca,qtdPatas,cor,peso,tamanho)
+    constructor(nome,raca,qtdPatas,cor,peso,tamanho,dono){
+        super(nome,raca,qtdPatas,cor,peso,tamanho,dono)
     }
     falar(){
         console.log("COCORICÓ")
@@ -97,32 +97,34 @@ class venda extends Humano {
         this.listaProduto = listaProduto;
     }
 }
+console.log("1-Gato");
+console.log("2-Cachorro");
+console.log("3-Galinha");
 
-//constructor(nome,raca,qtdPatas,cor,peso,tamanho){
-    console.log("1-Gato");
-    console.log("2-Cachorro");
-    console.log("3-Galinha");
-
-    let escolheAnimal=prompt("escolha o animal:");
-    const nome = prompt("digite o nome do animal:");
-    const raca = prompt("digite a raca do animal:");
-    const qtdPatas = prompt("digite a quantidade de patas do animal:");
-    const cor = prompt("digite a cor do animal:");
-    const peso = prompt("digite o peso do animal:");
-    const tamanho = prompt("digite tamanho do animal:");
-    const dono = prompt("Digite o nome do dono:");
-
-    if (escolheAnimal == 1){
-        const gato = new Gato(nome,raca,qtdPatas,cor,peso,tamanho,dono);
-        gato.falar();
-        console.log(gato);
-    }else if(escolheAnimal == 2){
-        Cachorro.falar();
-    }else if(escolheAnimal == 3){
-        Galinha.falar();
-    }else{
-        console.log("Animal invalido");
-    }
+let escolheAnimal= parseInt(prompt("escolha o animal:"));
+const nome = prompt("digite o nome do animal:");
+const raca = prompt("digite a raca do animal:");
+const qtdPatas = prompt("digite a quantidade de patas do animal:");
+const cor = prompt("digite a cor do animal:");
+const peso = prompt("digite o peso do animal:");
+const tamanho = prompt("digite tamanho do animal:");
+const dono = prompt("Digite o nome do dono:");
+    
+if (escolheAnimal == 1){
+    const gato = new Gato(nome,raca,qtdPatas,cor,peso,tamanho,dono);
+    gato.falar();
+    console.log(gato);
+}else if(escolheAnimal == 2){
+    const cachorro = new Cachorro(nome,raca,qtdPatas,cor,peso,tamanho,dono);
+    cachorro.falar();
+    console.log(cachorro);
+}else if(escolheAnimal == 3){
+    const galinha = new Galinha(nome,raca,qtdPatas,cor,peso,tamanho,dono);
+    galinha.falar();
+    console.log(galinha);
+}else{
+    console.log("Animal invalido");
+}
 
 
 
