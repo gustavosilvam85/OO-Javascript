@@ -16,7 +16,7 @@ class Pessoa {
     
         let idade = anoAtual - this.anoNascimento;
         if (mesAtual < this.mesNascimento || (mesAtual === this.mesNascimento && diaAtual < this.diaNascimento)) {
-          idade--;
+        idade--;
         }
         this.idade = idade;
     }

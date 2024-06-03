@@ -82,10 +82,10 @@ class Veterinario extends Funcionario {
     }
 }
 
-class Estoque{
+class Produto{
     constructor(item,quantidade,descricao,preco){
         this.item = item;
-        this.quantidaade = quantidade;
+        this.quantidade = quantidade;
         this.descricao = descricao;
         this.preco = preco ;
     }
@@ -97,34 +97,49 @@ class venda extends Humano {
         this.listaProduto = listaProduto;
     }
 }
-console.log("1-Gato");
-console.log("2-Cachorro");
-console.log("3-Galinha");
+console.log("=====Clinica Veterinaria=====");
+console.log("1-Cadastrar animal");
+console.log("2-Cadastrar um produto no estoque")
+let escolheMenu = parseInt(prompt("Escolha uma opção:"))
 
-let escolheAnimal= parseInt(prompt("escolha o animal:"));
-const nome = prompt("digite o nome do animal:");
-const raca = prompt("digite a raca do animal:");
-const qtdPatas = prompt("digite a quantidade de patas do animal:");
-const cor = prompt("digite a cor do animal:");
-const peso = prompt("digite o peso do animal:");
-const tamanho = prompt("digite tamanho do animal:");
-const dono = prompt("Digite o nome do dono:");
-    
-if (escolheAnimal == 1){
-    const gato = new Gato(nome,raca,qtdPatas,cor,peso,tamanho,dono);
-    gato.falar();
-    console.log(gato);
-}else if(escolheAnimal == 2){
-    const cachorro = new Cachorro(nome,raca,qtdPatas,cor,peso,tamanho,dono);
-    cachorro.falar();
-    console.log(cachorro);
-}else if(escolheAnimal == 3){
-    const galinha = new Galinha(nome,raca,qtdPatas,cor,peso,tamanho,dono);
-    galinha.falar();
-    console.log(galinha);
+if(escolheMenu == 1) {
+
+    console.log("1-Gato");
+    console.log("2-Cachorro");
+    console.log("3-Galinha");
+
+    let escolheAnimal= parseInt(prompt("escolha o animal:"));
+    const nome = prompt("digite o nome do animal:");
+    const raca = prompt("digite a raca do animal:");
+    const qtdPatas = prompt("digite a quantidade de patas do animal:");
+    const cor = prompt("digite a cor do animal:");
+    const peso = prompt("digite o peso do animal:");
+    const tamanho = prompt("digite tamanho do animal:");
+    const dono = prompt("Digite o nome do dono:");
+
+    if (escolheAnimal == 1){
+        const gato = new Gato(nome,raca,qtdPatas,cor,peso,tamanho,dono);
+        gato.falar();
+        console.log(gato);
+    }else if(escolheAnimal == 2){
+        const cachorro = new Cachorro(nome,raca,qtdPatas,cor,peso,tamanho,dono);
+        cachorro.falar();
+        console.log(cachorro);
+    }else if(escolheAnimal == 3){
+        const galinha = new Galinha(nome,raca,qtdPatas,cor,peso,tamanho,dono);
+        galinha.falar();
+        console.log(galinha);
+    }else{
+        console.log("Animal invalido");
+    }    
+}else if(escolheMenu == 2){
+    const item = prompt("Digite o nome do Produto:");
+    const quantidade = prompt("Digite a quantidade:");
+    const descricao = prompt("Digite a descricao do produto:");
+    const preco = prompt("Digite o preço:")
+    const produto = new Produto(item,quantidade,descricao,preco);
+    console.log(produto);
+
 }else{
-    console.log("Animal invalido");
-}
-
-
-
+    console.log("Opção invalida");
+}   
