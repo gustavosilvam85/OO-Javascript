@@ -6,6 +6,7 @@ class Pessoa {
         this.diaNascimento = diaNascimento;
         this.mesNascimento = mesNascimento;
         this.anoNascimento = anoNascimento;
+        this.idade = null;
     }
     calculaIdade(){
         const dataAtual = new Date();
@@ -17,7 +18,13 @@ class Pessoa {
         if (mesAtual < this.mesNascimento || (mesAtual === this.mesNascimento && diaAtual < this.diaNascimento)) {
           idade--;
         }
-        this.idade = idade
+        this.idade = idade;
+    }
+    informaIdade(){
+        return this.idade;
+    }
+    informaNome(){
+        return this.nome;
     }
 }
 
@@ -28,4 +35,6 @@ const anoNascimento = prompt("Digite o ano de nascimento:");
 
 const pessoa = new Pessoa (nome,diaNascimento,mesNascimento,anoNascimento);
 pessoa.calculaIdade();
+console.log(pessoa.informaIdade());
+console.log(pessoa.informaNome());
 console.log(pessoa.nome + " tem " + pessoa.idade + " anos e nasceu dia "+pessoa.diaNascimento+"/"+pessoa.mesNascimento+"/"+pessoa.anoNascimento);
